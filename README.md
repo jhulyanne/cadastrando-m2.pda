@@ -3,7 +3,7 @@
 ### Este é um projeto do módulo 2 proposto pelo curso Desenvolvedor Full-Stack do [Programadores do Amanhã](https://programadoresdoamanha.org/)
 
 <div align = "center">
-    <img  height = "100px" width = "auto" src="assets/imgs/logo_PdA.png">
+    <img src="assets/imgs/logo_PdA.png" height = "100px" width = "auto">
 </div>
 
 #### 📌 **Utilitários:**
