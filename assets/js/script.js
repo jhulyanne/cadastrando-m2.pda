@@ -140,3 +140,18 @@ function editProduct(index) {
         alert('Produto editado com sucesso!');
     };
 }
+
+// DELETE
+function deleteProduct(index) {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    products.splice(index, 1);
+    localStorage.setItem('products', JSON.stringify(products));
+    displayProducts();
+}
+
+window.onload = displayProducts;
+
+document.getElementById('productForm').onsubmit = function(event) {
+    event.preventDefault(); 
+    addProduct(); 
+};
