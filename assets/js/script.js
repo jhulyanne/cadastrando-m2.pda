@@ -91,3 +91,28 @@ function addProduct(title, author, publisher, genres, quantity) {
     localStorage.setItem('products', JSON.stringify(products));
 }
 
+// READ
+function displayProducts() {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const tableBody = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = '';
+
+    products.forEach((product, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.productCode}</td>
+            <td>${product.title}</td>
+            <td>${product.author}</td>
+            <td>${product.publisher}</td>
+            <td>${product.genres}</td>
+            <td>${product.quantity}</td>
+            <td>
+                <button onclick="editProduct(${index})">Editar</button>
+                <button onclick="deleteProduct(${index})">Excluir</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+
