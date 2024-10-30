@@ -9,30 +9,96 @@
 <body>
     <header></header>
     <main>
-        <button class="btn" id="btnAddNew">Add a new book</button>
-        <form id="addBook">
-            <div>
-                <legend>Status:</legend>
-                    <input type="radio" name="status" id="reading"/>
-                <label for="reading">Reading</label>
-                    <input type="radio" name="status" id="read"/>
-                <label for="read">Already read</label>
-                    <input type="radio" name="status" id="toRead"/>
-                <label for="toRead">To read</label>
-            </div>
-            <label for="author">Author:</label>
-                <input type="text" id="author"> 
-            <label for="publisher">Publisher:</label>
-                <input type="text" id="publisher">
-            <label for="genres">Genres:</label>
-                <input type="text" id="genres">
-            <label for="startRead">Start reading in:</label>
-                <input type="date" id="startRead">
-            <label for="endRead">End of reading in:</label>
-                <input type="date" id="endRead">
-            <label for="notes">Notes:</label>
-                <input type="text" id="notes">
-        </form>
+        <h2>O que você quer fazer?</h2>
+        <div id="btnsCreate">
+            <button class="btn" id="btn-add-order">Adicionar novo pedido</button>
+            <button class="btn" id="btn-add-product">Registrar novo produto</button>            
+        </div>
+  
+        <section id="newOrder">
+            <p>Atenção: caso haja mais de um valor para adicionar, separe-os por vírgula.</p>
+            <p>Exemplo: Email do cliente: ana.112@example.com, jules87@example.com</p>
+            <p>Consulte a <a href="#booksAvailable">tabela de produtos disponíveis</a> para checar os códigos dos itens da compra.</p>
+
+            <form id="orderForm">
+                <label for="orderProducts">Código do produto:</label>
+                    <input type="text" id="orderProducts" placeholder="Digite o código do produtos" required>
+                <label for="buyerName">Nome do cliente:</label>
+                    <input type="text" id="buyerName" placeholder="Digite o nome do cliente" required>
+                <label for="buyerCpf">CPF do cliente (apenas números):</label>
+                    <input type="number" id="buyerCpf" placeholder="Digite o CPF do cliente" required>
+                <label for="buyerNumber">Telefone do cliente (apenas números):</label>
+                    <input type="text" id="buyerNumber" placeholder="Digite o telefone do cliente" required>
+                <label for="buyerEmail">E-mail do cliente:</label>
+                    <input type="text" id="buyerEmail" placeholder="Digite o e-mail do cliente" required>  
+                <label for="buyerAddres">Endereço do cliente:</label>
+                    <input type="text" id="buyerAddres" placeholder="Digite o endereço do cliente" required>
+                <label for="paymentMethod">Forma de pagamento:</label>
+                    <select id="paymentMethod">
+                        <option class="payMethods" value="card">Cartão</option>
+                        <option class="payMethods" value="bankSlip">Boleto</option>
+                        <option class="payMethods" value="pix">Pix</option>
+                    </select>
+                <label for="orderStatus">Status do pedido:</label>
+                    <select id="orderStatus">
+                        <option class="orderSt" value="cartao">A confirmar pagamento</option>
+                        <option class="orderSt" value="boleto">Embalando</option>
+                        <option class="orderSt" value="pix">Enviado</option>
+                        <option class="orderSt" value="pix">Concluído</option>
+                    </select>
+                <button id="saveNewOrder">Concluir</button>
+            </form>
+        </section>
+
+        <section id="newProduct">
+            <p>Atenção: caso haja mais de um valor para adicionar, separe-os por vírgula.</p>
+            <p>Exemplo: Gêneros: romance, policial, suspense</p>
+            <form id="productForm">
+                <label for="bookTitle">Título do livro:</label>
+                    <input type="text" id="bookTitle" required>
+                <label for="bookAuthor">Autor:</label>
+                    <input type="text" id="bookAuthor" required>
+                <label for="bookPublisher">Editora:</label>
+                    <input type="text" id="bookPublisher" required>  
+                <label for="bookGenres">Gêneros:</label>
+                    <input type="text" id="bookGenres" required>
+                <label for="quantAvailable">Quantidade disponível no estoque:</label>
+                    <input type="number" id="quantAvailable" required>
+                <button id="saveNewProduct">Concluir</button>
+            </form>
+        </section>
+    
+        <section id="booksAvailable">
+            <h2>Produtos Disponíveis</h2>
+            <table id="productTable">
+                <tr>
+                    <th>Código</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Gêneros</th>
+                    <th>Quantidade</th>
+                </tr>
+            </table>
+        </section>
+        
+        <section id="ordersList">
+            <h2>Pedidos</h2>
+            <table id="orderTable">
+                <tr>
+                    <th>Código</th>
+                    <th>Produtos</th>
+                    <th>Nome do Cliente</th>
+                    <th>CPF do Cliente</th>
+                    <th>Contato</th>
+                    <th>Endereço</th>
+                    <th>Forma de Pagamento</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+        </section>
+        
     </main>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
