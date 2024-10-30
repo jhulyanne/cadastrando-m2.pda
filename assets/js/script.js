@@ -1,3 +1,31 @@
+// VISIBILIDADE DOS FORMS
+let btnNewOrder = document.getElementById("btn-add-order");
+let btnNewProduct = document.getElementById("btn-add-product");
+let btnClicked = false;
+
+btnNewOrder.addEventListener('click', function(){
+    let formOrder = document.getElementById('newOrder');
+    btnClicked = !btnClicked;
+
+    if(btnClicked) {
+        formOrder.style.display = "block";
+    } else {
+        formOrder.style.display = "none";
+    }
+})
+
+btnNewProduct.addEventListener('click', function(){
+    let formProduct = document.getElementById('newProduct');
+    btnClicked = !btnClicked;
+
+    if(btnClicked) {
+        formProduct.style.display = "block";
+    } else {
+        formProduct.style.display = "none";
+    }
+})
+
+
 // CRIAÇÃO DOS MODELOS
 class Product {
     constructor(title, author, publisher, genres, quantity) {
@@ -30,3 +58,4 @@ class Order {
         return String(Math.floor(Math.random() * 99999) + 1).padStart(5, '0');
     }
 }
+
