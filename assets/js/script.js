@@ -25,7 +25,6 @@ btnNewProduct.addEventListener('click', function(){
     }
 })
 
-
 // CRIAÇÃO DOS MODELOS
 class Product {
     constructor(title, author, publisher, genres, quantity) {
@@ -38,7 +37,7 @@ class Product {
     }
 
     static generateCode() {
-        return String(Math.floor(Math.random() * 99999) + 1).padStart(3, '0');
+        return String(Math.floor(Math.random() * 99999) + 1).padStart(4, '0');
     }
 }
 
@@ -57,5 +56,38 @@ class Order {
     static generateCode() {
         return String(Math.floor(Math.random() * 99999) + 1).padStart(5, '0');
     }
+}
+
+function addProduct(title, author, publisher, genres, quantity) {
+    const product = new Product(title, author, publisher, genres, quantity);
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    products.push(product);
+    localStorage.setItem('products', JSON.stringify(products));
+}
+
+document.getElementById('productForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('bookTitle').value;
+    const author = document.getElementById('bookAuthor').value;
+    const publisher = document.getElementById('bookPublisher').value;
+    const genres = document.getElementById('bookGenres').value;
+    const quantity = parseInt(document.getElementById('quantAvailable').value);
+
+    addProduct(title, author, publisher, genres, quantity);
+
+    document.getElementById('productForm').reset();
+    alert('Produto adicionado com sucesso!');
+});
+
+// ------------------------------------------------------------------------------------
+// IMPLEMENTANDO CRUD
+
+// CREATE
+function addProduct(title, author, publisher, genres, quantity) {
+    const product = new Product(title, author, publisher, genres, quantity);
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    products.push(product);
+    localStorage.setItem('products', JSON.stringify(products));
 }
 
