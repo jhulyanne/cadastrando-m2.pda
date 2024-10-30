@@ -107,3 +107,36 @@ function displayProducts() {
         tableBody.appendChild(row);
     });
 }
+
+// UPDATE
+function editProduct(index) {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const product = products[index];
+    
+    document.getElementById('bookTitle').value = product.title;
+    document.getElementById('bookAuthor').value = product.author;
+    document.getElementById('bookPublisher').value = product.publisher;
+    document.getElementById('bookGenres').value = product.genres;
+    document.getElementById('quantAvailable').value = product.quantity;
+
+    const formProduct = document.getElementById('newProduct');
+    formProduct.style.display = "block";
+
+    document.getElementById('productForm').onsubmit = function(event) {
+        event.preventDefault();
+
+        product.title = document.getElementById('bookTitle').value;
+        product.author = document.getElementById('bookAuthor').value;
+        product.publisher = document.getElementById('bookPublisher').value;
+        product.genres = document.getElementById('bookGenres').value;
+        product.quantity = parseInt(document.getElementById('quantAvailable').value);
+
+        products[index] = product;
+        localStorage.setItem('products', JSON.stringify(products));
+
+        displayProducts();
+        document.getElementById('productForm').reset();
+        document.getElementById('productForm').onsubmit = addProduct;
+        alert('Produto editado com sucesso!');
+    };
+}
