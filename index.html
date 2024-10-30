@@ -41,12 +41,12 @@
                     </select>
                 <label for="orderStatus">Status do pedido:</label>
                     <select id="orderStatus">
-                        <option class="orderSt" value="cartao">A confirmar pagamento</option>
-                        <option class="orderSt" value="boleto">Embalando</option>
-                        <option class="orderSt" value="pix">Enviado</option>
-                        <option class="orderSt" value="pix">Concluído</option>
+                        <option class="orderSt" value="toConfirm">A confirmar pagamento</option>
+                        <option class="orderSt" value="packing">Embalando</option>
+                        <option class="orderSt" value="sent">Enviado</option>
+                        <option class="orderSt" value="completed">Concluído</option>
                     </select>
-                <button id="saveNewOrder">Concluir</button>
+                <button type="submit" id="saveNewOrder">Concluir</button>
             </form>
         </section>
 
@@ -103,6 +103,7 @@
             </table>
         </section>
         
+        <button>Excluir todos os dados</button>
     </main>
     <script src="assets/js/script.js"></script>
 </body>

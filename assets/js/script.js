@@ -1,10 +1,12 @@
-// VISIBILIDADE DOS FORMS
-let btnNewOrder = document.getElementById("btn-add-order");
-let btnNewProduct = document.getElementById("btn-add-product");
+// ---------------- VISIBILIDADE DOS FORMS
+const btnNewOrder = document.getElementById("btn-add-order");
+const btnNewProduct = document.getElementById("btn-add-product");
+const formProduct = document.getElementById('newProduct');
+const formOrder = document.getElementById('newOrder');
 let btnClicked = false;
 
 btnNewOrder.addEventListener('click', function(){
-    let formOrder = document.getElementById('newOrder');
+    
     btnClicked = !btnClicked;
 
     if(btnClicked) {
@@ -15,7 +17,6 @@ btnNewOrder.addEventListener('click', function(){
 })
 
 btnNewProduct.addEventListener('click', function(){
-    let formProduct = document.getElementById('newProduct');
     btnClicked = !btnClicked;
 
     if(btnClicked) {
@@ -25,7 +26,7 @@ btnNewProduct.addEventListener('click', function(){
     }
 })
 
-// CRIAÇÃO DOS MODELOS
+// --------- CRIAÇÃO DOS MODELOS
 class Product {
     constructor(title, author, publisher, genres, quantity) {
         this.productCode = Product.generateCode(); 
@@ -58,37 +59,29 @@ class Order {
     }
 }
 
-function addProduct(title, author, publisher, genres, quantity) {
-    const product = new Product(title, author, publisher, genres, quantity);
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products));
-}
-
-document.getElementById('productForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+// ------------------------------------------------------------------------------------
+// IMPLEMENTANDO CRUD
+// CREATE
+function addProduct() {
     const title = document.getElementById('bookTitle').value;
     const author = document.getElementById('bookAuthor').value;
     const publisher = document.getElementById('bookPublisher').value;
     const genres = document.getElementById('bookGenres').value;
     const quantity = parseInt(document.getElementById('quantAvailable').value);
 
-    addProduct(title, author, publisher, genres, quantity);
+    if (!title || !author || !publisher || !genres || isNaN(quantity)) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+    }
 
-    document.getElementById('productForm').reset();
-    alert('Produto adicionado com sucesso!');
-});
-
-// ------------------------------------------------------------------------------------
-// IMPLEMENTANDO CRUD
-
-// CREATE
-function addProduct(title, author, publisher, genres, quantity) {
     const product = new Product(title, author, publisher, genres, quantity);
     const products = JSON.parse(localStorage.getItem('products')) || [];
     products.push(product);
     localStorage.setItem('products', JSON.stringify(products));
+
+    alert('Produto adicionado com sucesso!');
+    displayProducts();
+    document.getElementById('productForm').reset();
 }
 
 // READ
@@ -114,5 +107,3 @@ function displayProducts() {
         tableBody.appendChild(row);
     });
 }
-
-
