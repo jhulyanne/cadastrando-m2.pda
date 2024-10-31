@@ -205,11 +205,6 @@ function handleAddOrder() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     const orderStatus = document.getElementById('orderStatus').value;
 
-    if (!productCode || !clientName || !clientCpf || !clientNumber || !clientEmail || !clientAddress || !paymentMethod || !orderStatus) {
-        alert('Por favor, preencha todos os campos!');
-        return;
-    }
-
     const newOrder = new Order(productCode, clientName, clientCpf, clientNumber, clientEmail, clientAddress, paymentMethod, orderStatus);
     newOrder.save();
 
@@ -218,8 +213,6 @@ function handleAddOrder() {
     document.getElementById('orderForm').reset();
 }
 
-
-// Exibir pedidos ao carregar a página
 window.onload = () => {
     Product.displayAll(); // Caso queira exibir produtos também
     Order.displayAll();
@@ -246,30 +239,3 @@ function handleAddProduct() {
     Product.displayAll();
     document.getElementById('productForm').reset();
 }
-
-// let orders = JSON.parse(localStorage.getItem('orders')) || [];
-// orders = orders.map(order => new Order(order.author, order.publisher, order.genres, order.quantity));
-
-// function handleAddOrder() {
-//     const orderProducts = document.getElementById('orderProducts').value;
-//     const costumerName = document.getElementById('buyerName').value;
-//     const costumerCpf = parseInt(document.getElementById('buyerCpf').value);
-//     const costumerNumber = parseInt(document.getElementById('buyerNumber').value);
-//     const costumerEmail = document.getElementById('buyerEmail').value;
-//     const payMethod = document.getElementById('paymentMethod').value;
-//     const quantity = document.getElementById('buyerEmail').value;
-
-
-//     const newProduct = new Product(title, author, publisher, genres, quantity);
-//     newProduct.save();
-
-//     alert('Produto adicionado com sucesso!');
-//     Product.displayAll();
-//     document.getElementById('productForm').reset();
-// }
-
-window.onload = () => Product.displayAll();
-document.getElementById('productForm').onsubmit = function(event) {
-    event.preventDefault();
-    handleAddProduct();
-};
