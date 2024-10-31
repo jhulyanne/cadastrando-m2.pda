@@ -6,7 +6,7 @@
     <img src="assets/imgs/logo_PdA.png" height = "100px" width = "auto">
 </div>
 
-#### Este projeto é um controle de inventário e pedidos de uma livraria online. A ideia veio de um projeto realizado entre abril e junho de 2023 com alguns colaboradores. [Link para o projeto](https://github.com/jhulyanne/livraria-do-tempo).
+### Este projeto é um controle de inventário e pedidos de uma livraria online. A ideia veio de um projeto realizado entre abril e junho de 2023 com alguns colaboradores. [Link para o projeto](https://github.com/jhulyanne/livraria-do-tempo).
 
 A ideia é ter um controle de produtos e pedidos, utilizando as operações CRUD para garantir interatividade com o usuário, manutenção de dados e maior flexibilidade para gerenciar os produtos e pedidos.
 
