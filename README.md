@@ -6,13 +6,17 @@
     <img src="assets/imgs/logo_PdA.png" height = "100px" width = "auto">
 </div>
 
-#### 📌 **Utilitários:**
+#### Este projeto é um controle de inventário e pedidos de uma livraria online. A ideia veio de um projeto realizado entre abril e junho de 2023 com alguns colaboradores. [Link para o projeto](https://github.com/jhulyanne/livraria-do-tempo).
+
+A ideia é ter um controle de produtos e pedidos, utilizando as operações CRUD para garantir interatividade com o usuário, manutenção de dados e maior flexibilidade para gerenciar os produtos e pedidos.
+
+### 📌 **Utilitários:**
 - [Figma](https://www.figma.com/design/bcqhIZjqezCQ4gQ0exdDu5/Cadastrando?node-id=0-1&node-type=canvas&t=jdJtqI9HOQlbx8e4-0)
 
-#### ⚙️ **Descrição:** 
+### ⚙️ **Descrição:** 
 Neste projeto você deve utilizar as tecnologias **HTML, CSS & Javascript** para criar uma página de cadastro.
 
-#### 🎯 **Requisitos:**
+### 🎯 **Requisitos:**
 - Construa um site de cadastro;
 - As tecnologias usadas devem ser HTML, CSS & Javascript.
 - O site deve conter as opções de:
