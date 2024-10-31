@@ -4,7 +4,6 @@ const formOrder = document.getElementById('newOrder');
 const formProduct = document.getElementById('newProduct');
 let btnClicked = false;
 
-
 btnNewOrder.addEventListener('click', function(){
     btnClicked = !btnClicked;
 
