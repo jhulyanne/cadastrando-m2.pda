@@ -47,8 +47,8 @@ class Product {
                 <td>${product.genres}</td>
                 <td>${product.quantity}</td>
                 <td>
-                    <button id="btnEdit" onclick="Product.editProduct(${index})">Editar</button>
-                    <button id="btnDel" onclick="Product.delete(${index}); Product.displayAll()">Excluir</button>
+                    <button class="btnEdit" onclick="Product.editProduct(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
+                    <button class="btnDel" onclick="Product.delete(${index}); Product.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de excluir"></button>
                 </td>
             `;
             tableBody.appendChild(row);
@@ -146,8 +146,8 @@ class Order {
                 <td>${order.paymentMethod}</td>
                 <td>${order.orderStatus}</td>
                 <td>
-                    <button onclick="Order.editOrder(${index})">Editar</button>
-                    <button onclick="Order.delete(${index}); Order.displayAll()">Excluir</button>
+                    <button class="btnEdit" onclick="Order.editOrder(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
+                    <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de editar"></button>
                 </td>
             `;
             tableBody.appendChild(row);

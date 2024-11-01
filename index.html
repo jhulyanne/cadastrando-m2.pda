@@ -7,12 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <img src="" alt="">
+    </header>
     <main>
         <h2>O que você quer fazer?</h2>
         <div id="btnsCreate">
-            <button class="btn" id="btnAddOrder">Adicionar novo pedido</button>
-            <button class="btn" id="btnAddProduct">Registrar novo produto</button>            
+            <button class="btns" id="btnAddOrder">Adicionar novo pedido</button>
+            <button class="btns" id="btnAddProduct">Registrar novo produto</button>            
         </div>
   
         <section id="newOrder">
@@ -33,7 +35,8 @@
                     <input type="text" id="buyerEmail" placeholder="Digite o e-mail do cliente" required>  
                 <label for="buyerAddres">Endereço do cliente:</label>
                     <input type="text" id="buyerAddres" placeholder="Digite o endereço do cliente" required>
-                <label for="paymentMethod">Forma de pagamento:</label>
+                <div id="payAndstatus">
+                    <label for="paymentMethod">Forma de pagamento:</label>
                     <select id="paymentMethod">
                         <option class="payMethods" value="card">Cartão</option>
                         <option class="payMethods" value="bankSlip">Boleto</option>
@@ -46,7 +49,9 @@
                         <option class="orderSt" value="sent">Enviado</option>
                         <option class="orderSt" value="completed">Concluído</option>
                     </select>
-                <button type="submit" id="saveNewOrder">Concluir</button>
+                </div>
+                
+                <button type="submit" class="btns" id="saveNewOrder">Concluir</button>
             </form>
         </section>
 
@@ -107,7 +112,7 @@
             </table>
         </section>
         
-        <button>Excluir todos os dados</button>
+        <button class="btns">Excluir todos os dados</button>
     </main>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/classes.js"></script>
