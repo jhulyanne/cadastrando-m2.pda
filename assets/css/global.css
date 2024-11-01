@@ -9,43 +9,50 @@
 
 body {
     font-family: "Nunito";
-    background-color: #a38ca3;
 }
 
 header {
-    background-color: #794343;
-    
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#orderForm {
+    display: flex;
+    flex-direction: column;
+
     
+    input {
+    border-radius: 8px;
+    width: 20rem;
+    height: 2.3rem;
+
+    #paymentMethod, #orderStatus {
+        border-radius: 8px;
+        width: 10rem;
+        height: 2.6em;
+        display: flex;
+        flex-direction: row;
+        }
+    }
+}
+
+#btnsCreate {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+
 }
 
 #newOrder, #newProduct {
     display: none;
     font-weight: 500;
-
-    #orderForm {
-        display: flex;
-        flex-direction: column;
-
-        input {
-        border-radius: 8px;
-        width: 20rem;
-        height: 2.3rem;
-
-        #paymentMethod, #orderStatus {
-            border-radius: 8px;
-            width: 10rem;
-            height: 2.6em;
-            display: flex;
-            flex-direction: row;
-            }
-        }
-    }
-    
 }
-
 
 
 
@@ -54,25 +61,4 @@ main {
     height: 2.5rem;
     border-radius: 10px;
     margin: 2px;
-}
-
-
-thead {
-    background-color: yellowgreen;
-}
-
-
-
-.btnEdit, .btnDel {
-    width: 4rem;
-    height: 2rem;
-    margin: 2px;
-    border-radius: 8px;
-}
-
-
-.imgBtnEditDel {
-    padding: 5px;
-    width: 2rem;
-    height: auto;
 }

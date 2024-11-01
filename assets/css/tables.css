@@ -1,0 +1,49 @@
+#tables {
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+    
+    #productTable, #orderTable {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-collapse: collapse;
+
+        th {
+            height: 2.5rem;
+            background-color: #181C14;
+            color: #ECDFCC;
+            font-weight: 700;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #fcfcfc;
+        }
+
+        tr:hover {
+            background-color: #adaea7;
+            font-weight: 700;
+        }
+        
+        .btnEdit, .btnDel {
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btnEdit:hover, .btnDel:hover {
+            transform: scale(1.3);
+        }
+        
+        .imgBtnEditDel {
+            margin: 10px;
+            width: 1.9rem;
+            height: auto;
+        }
+
+    }
+}

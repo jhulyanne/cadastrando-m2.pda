@@ -90,13 +90,11 @@ class Product {
 // p.s.: socorro
 
 class Order {
-    constructor(productCode, clientName, clientCpf, clientNumber, clientEmail, clientAddress, paymentMethod, orderStatus) {
+    constructor(productCode, clientName, clientNumber, clientAddress, paymentMethod, orderStatus) {
         this.orderCode = Order.generateCode();
         this.productCode = productCode;  // Adicione este campo
         this.clientName = clientName;
-        this.clientCpf = clientCpf;
         this.clientNumber = clientNumber;
-        this.clientEmail = clientEmail;
         this.clientAddress = clientAddress;
         this.paymentMethod = paymentMethod;
         this.orderStatus = orderStatus;
@@ -140,7 +138,6 @@ class Order {
                 <td>${order.orderCode}</td>
                 <td>${order.productCode}</td> <!-- Agora exibe o código do produto -->
                 <td>${order.clientName}</td>
-                <td>${order.clientCpf}</td>
                 <td>${order.clientNumber}</td>
                 <td>${order.clientAddress}</td>
                 <td>${order.paymentMethod}</td>
@@ -159,9 +156,7 @@ class Order {
         const order = orders[index];
         
         document.getElementById('buyerName').value = order.clientName;
-        document.getElementById('buyerCpf').value = order.clientCpf;
         document.getElementById('buyerNumber').value = order.clientNumber;
-        document.getElementById('buyerEmail').value = order.clientEmail;
         document.getElementById('buyerAddres').value = order.clientAddress;
         document.getElementById('paymentMethod').value = order.paymentMethod;
         document.getElementById('orderStatus').value = order.orderStatus;
@@ -173,9 +168,7 @@ class Order {
 
             const updatedData = {
                 clientName: document.getElementById('buyerName').value,
-                clientCpf: document.getElementById('buyerCpf').value,
                 clientNumber: document.getElementById('buyerNumber').value,
-                clientEmail: document.getElementById('buyerEmail').value,
                 clientAddress: document.getElementById('buyerAddres').value,
                 paymentMethod: document.getElementById('paymentMethod').value,
                 orderStatus: document.getElementById('orderStatus').value
@@ -192,20 +185,18 @@ class Order {
 
 // Inicializar pedidos e converter objetos recuperados do localStorage para instâncias de Order
 let orders = JSON.parse(localStorage.getItem('orders')) || [];
-orders = orders.map(order => new Order(order.clientName, order.clientCpf, order.clientNumber, order.clientEmail, order.clientAddress, order.paymentMethod, order.orderStatus));
+orders = orders.map(order => new Order(order.clientName, order.clientNumber, order.clientAddress, order.paymentMethod, order.orderStatus));
 
 // Função para adicionar pedido
 function handleAddOrder() {
     const productCode = document.getElementById('orderProducts').value; // Captura o código do produto
     const clientName = document.getElementById('buyerName').value;
-    const clientCpf = document.getElementById('buyerCpf').value;
     const clientNumber = document.getElementById('buyerNumber').value;
-    const clientEmail = document.getElementById('buyerEmail').value;
     const clientAddress = document.getElementById('buyerAddres').value;
     const paymentMethod = document.getElementById('paymentMethod').value;
     const orderStatus = document.getElementById('orderStatus').value;
 
-    const newOrder = new Order(productCode, clientName, clientCpf, clientNumber, clientEmail, clientAddress, paymentMethod, orderStatus);
+    const newOrder = new Order(productCode, clientName, clientNumber, clientAddress, paymentMethod, orderStatus);
     newOrder.save();
 
     alert('Pedido adicionado com sucesso!');
