@@ -40,15 +40,17 @@ class Product {
         products.forEach((product, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${product.productCode}</td>
-                <td>${product.title}</td>
-                <td>${product.author}</td>
-                <td>${product.publisher}</td>
-                <td>${product.genres}</td>
-                <td>${product.quantity}</td>
-                <td>
-                    <button class="btnEdit" onclick="Product.editProduct(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
-                    <button class="btnDel" onclick="Product.delete(${index}); Product.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de excluir"></button>
+                <td data-th="">${product.productCode}</td>
+                <td data-th="">${product.title}</td>
+                <td data-th="">${product.author}</td>
+                <td data-th="">${product.publisher}</td>
+                <td data-th="">${product.genres}</td>
+                <td data-th="">${product.quantity}</td>
+                <td data-th="">
+                    <div class="btnsEdDel">
+                        <button class="btnEdit" onclick="Order.editOrder(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
+                        <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de editar"></button>
+                    </div>
                 </td>
             `;
             tableBody.appendChild(row);
@@ -135,16 +137,18 @@ class Order {
         orders.forEach((order, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${order.orderCode}</td>
-                <td>${order.productCode}</td> <!-- Agora exibe o código do produto -->
-                <td>${order.clientName}</td>
-                <td>${order.clientNumber}</td>
-                <td>${order.clientAddress}</td>
-                <td>${order.paymentMethod}</td>
-                <td>${order.orderStatus}</td>
-                <td>
-                    <button class="btnEdit" onclick="Order.editOrder(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
-                    <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de editar"></button>
+                <td data-th="Código">${order.orderCode}</td>
+                <td data-th="Produtos">${order.productCode}</td> <!-- Agora exibe o código do produto -->
+                <td data-th="Nome do cliente">${order.clientName}</td>
+                <td data-th="Contato">${order.clientNumber}</td>
+                <td data-th="Endereço">${order.clientAddress}</td>
+                <td data-th="Forma de pagamento">${order.paymentMethod}</td>
+                <td data-th="Status">${order.orderStatus}</td>
+                <td data-th="Editar/excluír">
+                    <div class="btnsEdDel">
+                        <button class="btnEdit" onclick="Order.editOrder(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="ícone de editar"></button>
+                        <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="ícone de editar"></button>
+                    </div>
                 </td>
             `;
             tableBody.appendChild(row);
