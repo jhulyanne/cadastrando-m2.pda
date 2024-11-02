@@ -1,6 +1,10 @@
 #tables {
-    h2 {
-        font-size: 1.5em;
+    width: 85%;
+
+    caption {
+        font-size: 1.5rem;
+        text-align: left;
+        font-weight: 700;
         margin-bottom: 10px;
         color: #000000;
     }
@@ -11,16 +15,19 @@
         border-collapse: collapse;
 
         th {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
             height: 2.5rem;
-            background-color: #181C14;
+            background-color: #181c14;
             color: #ECDFCC;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 15px;
         }
 
         th, td {
-            padding: 12px 15px;
+            
             text-align: center;
-            border-bottom: 1px solid #fcfcfc;
         }
 
         tr:hover {
