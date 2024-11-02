@@ -1,0 +1,25 @@
+
+#orderForm {
+    display: flex;
+    flex-direction: column;
+
+    
+    input {
+    border-radius: 8px;
+    width: 20rem;
+    height: 2.3rem;
+
+    #paymentMethod, #orderStatus {
+        border-radius: 8px;
+        width: 10rem;
+        height: 2.6em;
+        display: flex;
+        flex-direction: row;
+        }
+    }
+}
+
+#btnsCreate {
+    display: flex;
+    flex-direction: row;
+}
