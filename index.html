@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/tables.css">
-    <link rel="stylesheet" href="assets/css/responsiveness.css">
+    <link rel="stylesheet" href="assets/css/responsive-layout.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     </header>
     <main>
         <section id="initialDisplay">
-            <h2>O que você quer fazer?</h2>
+            <h2 id="initialText">O que você quer fazer?</h2>
             <div id="btnsCreate">
                 <button class="btns" id="btnAddProduct">Registrar novo produto</button>   
                 <button class="btns" id="btnAddOrder">Adicionar novo pedido</button>         
@@ -48,14 +48,14 @@
                         <select id="paymentMethod">
                             <option class="payMethods" value="Cartão">Cartão</option>
                             <option class="payMethods" value="Boleto">Boleto</option>
-                            <option class="payMethods" value="pix">Pix</option>
+                            <option class="payMethods" value="Pix">Pix</option>
                         </select>
                     <label for="orderStatus">Status do pedido:</label>
                         <select id="orderStatus">
-                            <option class="orderSt" value="toConfirm">A confirmar pagamento</option>
-                            <option class="orderSt" value="packing">Embalando</option>
-                            <option class="orderSt" value="sent">Enviado</option>
-                            <option class="orderSt" value="completed">Concluído</option>
+                            <option class="orderSt" value="A confirmar pagamento">A confirmar pagamento</option>
+                            <option class="orderSt" value="Embalando">Embalando</option>
+                            <option class="orderSt" value="Enviado">Enviado</option>
+                            <option class="orderSt" value="Concluído">Concluído</option>
                         </select>
                     </div>
                     <button type="submit" class="btns" id="saveNewOrder">Concluir</button>
@@ -77,8 +77,6 @@
                         <input type="number" id="quantAvailable" required>
                     <button id="saveNewProduct">Concluir</button>
                 </form>
-        
-        
             </div>
         </section>
 
@@ -94,6 +92,7 @@
                             <th>Editora</th>
                             <th>Gêneros</th>
                             <th>Quantidade</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
