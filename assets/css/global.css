@@ -5,9 +5,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-}
-
-header {
+    overflow-x: hidden;
 }
 
 body {
@@ -15,6 +13,10 @@ body {
     background-color: #767d74;
 }
 
+header {
+    height: 10vh;
+    background-color: #181c14;
+}
 
 main {
     display: flex;
@@ -23,23 +25,20 @@ main {
 }
 
 #initialDisplay {
+    height: 70vh;
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
 
-    h2 {
-        padding: 10px;
-    }
-
-    #btnsCreate {
+    /* #btnsCreate {
         display: flex;
         justify-content: center;
-    }
-
+    } */
 }
 
 .btns {
-    width: 13rem;
+    width: 10rem;
     height: 3rem;
     border-radius: 15px;
     margin: 2px;
@@ -51,9 +50,7 @@ main {
     }
 }
 
-#btnsCreate {
-    display: flex;
-}
+
 
 
 

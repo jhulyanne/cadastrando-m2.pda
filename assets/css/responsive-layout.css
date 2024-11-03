@@ -2,15 +2,17 @@
 
 
     #tables {
+        font-size: 0.8em;
+        
         thead {
             display: none;
         }
     
         td {
+            padding-left: 2rem;
             display: grid;
             gap: 10rem;
-            grid-template-columns: 2ch auto;
-            
+            grid-template-columns: 9ch auto;
         }
     
         td::before {
@@ -19,7 +21,18 @@
             color: #181c14;
             text-decoration: underline;
         }
+
+        .imgBtnEditDel {
+            height: 10px;
+            width: auto;
+        }
     }
 
-    
+    .btns {
+        font-size: 0.7em;
+        width: 10rem;
+        height: 2.5rem;
+    }
+
+  
 }
