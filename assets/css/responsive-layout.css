@@ -1,20 +1,25 @@
 @media all and (max-width: 590px) {
 
 
-    thead {
-        display: none;
-
+    #tables {
+        thead {
+            display: none;
+        }
+    
+        td {
+            display: grid;
+            gap: 10rem;
+            grid-template-columns: 2ch auto;
+            
+        }
+    
+        td::before {
+            content: attr(data-th) ": ";
+            font-weight: 900;
+            color: #181c14;
+            text-decoration: underline;
+        }
     }
 
-    td {
-        display: grid;
-        gap: 5rem;
-        grid-template-columns: 4ch auto;
-    }
-
-    td::before {
-        content: attr(data-th) " ";
-        font-weight: 900;
-        color: #181c14;
-    }
+    
 }
