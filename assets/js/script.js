@@ -16,7 +16,7 @@ btnNewProduct.addEventListener('click', function(){
         btnNewOrder.style.display = "none";
         formOrder.style.display = "none";
         formProduct.style.display = "block";
-        initialDisplay.style.height = "15vh";
+        initialDisplay.style.height = "20vh";
         textAndImg.style.display = "none"
 
     } else {
@@ -38,7 +38,7 @@ btnNewOrder.addEventListener('click', function(){
         initialText.style.display = "none";
         formOrder.style.display = "block";
         formProduct.style.display = "none";
-        initialDisplay.style.height = "15vh";
+        initialDisplay.style.height = "20vh";
         textAndImg.style.display = "none"
 
     } else {

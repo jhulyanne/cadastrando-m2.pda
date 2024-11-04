@@ -1,24 +1,35 @@
-
-#newOrder, #newProduct {
+/* #newOrder, #newProduct {
     display: none;
-}
+} */
 
-#orderForm {
+#orderForm, #productForm {
     display: flex;
     flex-direction: column;
-
+    gap: 10px;
     
-    input {
-    border-radius: 8px;
-    width: 20rem;
-    height: 2.3rem;
-
-    #paymentMethod, #orderStatus {
-        border-radius: 8px;
-        width: 10rem;
-        height: 2.6em;
+    .labelInput {
         display: flex;
-        flex-direction: row;
-        }
+        justify-content: space-between;
     }
+
+    input {
+        border-radius: 10px;
+        width: 50%;
+        height: 2em;
+    }
+
+    input::placeholder {
+        color: #757575;
+        padding-left: 10px;
+    }
+    
+}
+
+#paymentMethod, #orderStatus {
+    width: 50%;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }

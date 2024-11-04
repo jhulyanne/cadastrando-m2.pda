@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/forms.css">
-    <link rel="stylesheet" href="assets/css/tables.css">
     <link rel="stylesheet" href="assets/css/responsive-layout.css">
-    <title>Document</title>
+    <title>Controle de inventário</title>
 </head>
 <body>
     <header>
-        <img src="" alt="">
+        <div id="divLogo">
+            <a href="index.html"><img id="logo" src="assets/imgs/logo.svg" alt=""></a>
+        </div>
+        <ul>
+            <li><a href="#booksAvailable">Produtos registrados</a></li>
+            <li><a href="#ordersList">Pedidos registrados</a></li>
+        </ul>
     </header>
     <main>
         <section id="initialDisplay">
@@ -23,7 +28,7 @@
                 <button class="btns" id="btnAddProduct">Adicionar novo produto</button>   
                 <button class="btns" id="btnAddOrder">Adicionar novo pedido</button>         
             </div>
-            <a href="#tables">Visualizar conteúdo já disponível</a>
+            <a href="#tables">Visualizar conteúdo já registrado</a>
         </section>
 
         <section id="forms">
@@ -49,19 +54,23 @@
                         <input type="text" id="buyerAddres" placeholder="Digite o endereço do cliente" required>
                     </div>
                     <div id="payAndstatus">
-                        <label for="paymentMethod">Forma de pagamento:</label>
-                        <select id="paymentMethod">
-                            <option class="payMethods" value="Cartão">Cartão</option>
-                            <option class="payMethods" value="Boleto">Boleto</option>
-                            <option class="payMethods" value="Pix">Pix</option>
-                        </select>
-                    <label for="orderStatus">Status do pedido:</label>
-                        <select id="orderStatus">
-                            <option class="orderSt" value="A confirmar pagamento">A confirmar pagamento</option>
-                            <option class="orderSt" value="Embalando">Embalando</option>
-                            <option class="orderSt" value="Enviado">Enviado</option>
-                            <option class="orderSt" value="Concluído">Concluído</option>
-                        </select>
+                        <div class="labelInput">
+                            <label for="paymentMethod">Forma de pagamento:</label>
+                            <select id="paymentMethod">
+                                <option class="payMethods" value="Cartão">Cartão</option>
+                                <option class="payMethods" value="Boleto">Boleto</option>
+                                <option class="payMethods" value="Pix">Pix</option>
+                            </select>
+                        </div>
+                    <div class="labelInput">
+                        <label for="orderStatus">Status do pedido:</label>
+                            <select id="orderStatus">
+                                <option class="orderSt" value="A confirmar pagamento">A confirmar pagamento</option>
+                                <option class="orderSt" value="Embalando">Embalando</option>
+                                <option class="orderSt" value="Enviado">Enviado</option>
+                                <option class="orderSt" value="Concluído">Concluído</option>
+                            </select>
+                    </div>
                     </div>
                     <button type="submit" class="btns" id="saveNewOrder">Concluir</button>
                 </form>
@@ -70,17 +79,27 @@
                 <p>Atenção: caso haja mais de um valor para adicionar, separe-os por vírgula.</p>
                 <p>Exemplo: Gêneros: romance, policial, suspense</p>
                 <form id="productForm">
-                    <label for="bookTitle">Título do livro:</label>
-                        <input type="text" id="bookTitle" required>
-                    <label for="bookAuthor">Autor:</label>
-                        <input type="text" id="bookAuthor" required>
-                    <label for="bookPublisher">Editora:</label>
-                        <input type="text" id="bookPublisher" required>  
-                    <label for="bookGenres">Gêneros:</label>
-                        <input type="text" id="bookGenres" required>
-                    <label for="quantAvailable">Quantidade disponível no estoque:</label>
-                        <input type="number" id="quantAvailable" required>
-                    <button id="saveNewProduct">Concluir</button>
+                    <div class="labelInput">
+                        <label for="bookTitle">Título:</label>
+                        <input type="text" id="bookTitle" placeholder="Digite o título do livro" required>
+                    </div>
+                    <div class="labelInput">
+                        <label for="bookAuthor">Autor:</label>
+                        <input type="text" id="bookAuthor" placeholder="Digite o autor do livro" required>
+                    </div>
+                    <div class="labelInput">
+                        <label for="bookPublisher">Editora:</label>
+                        <input type="text" id="bookPublisher" placeholder="Digite a editora do livro" required>
+                    </div>
+                    <div class="labelInput">
+                        <label for="bookGenres">Gêneros:</label>
+                        <input type="text" id="bookGenres" placeholder="Digite o título do livro" required>
+                    </div>
+                    <div class="labelInput">
+                        <label for="quantAvailable">Quantidade disponível no estoque:</label>
+                        <input type="number" id="quantAvailable" placeholder="" required>
+                    </div>
+                    <button class="btns" id="saveNewProduct">Concluir</button>
                 </form>
             </div>
         </section>
@@ -126,12 +145,14 @@
                 </table>
             </div>
         </section>
-
-        <button class="btns">Excluir todos os dados</button>
-        <button id="backToTop"><a href="#top"><img class="imgUp" src="assets/imgs/icons/up-icon.svg" alt=""></a></button>
+        <button id="backToTop"><a href="#top"><img class="imgUp" src="assets/imgs/icons/up-icon.svg" alt=""></a></button>   
     </main>
+    
     <script src="assets/js/script.js"></script>
     <script src="assets/js/classes.js"></script>
-    <footer></footer>
+    <footer>
+        <button id="deleteAll">Excluir todos os dados</button>
+       
+    </footer>
 </body>
 </html>
