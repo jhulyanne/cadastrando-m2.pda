@@ -39,7 +39,7 @@ class Product {
                 <td data-th="Autor">${product.author}</td>
                 <td data-th="Editora">${product.publisher}</td>
                 <td data-th="Gênero(s)">${product.genres}</td>
-                <td data-th="Estoque">${product.quantity}</td>
+                <td data-th="Em estoque">${product.quantity}</td>
                 <td data-th="Editar/excluir">
                     <div class="btnsEdDel">
                         <button class="btnEdit" onclick="Product.editProduct(${index})">

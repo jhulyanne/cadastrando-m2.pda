@@ -10,12 +10,12 @@
 
 body {
     font-family: "Nunito";
-    background-color: #767d74;
+    background-color: #c0a498;
 }
 
 header {
     height: 10vh;
-    background-color: #181c14;
+    background-color: #092343;
 }
 
 main {
@@ -25,32 +25,52 @@ main {
 }
 
 #initialDisplay {
-    height: 70vh;
+    height: 90vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    justify-content: center;
+ 
+    #textAndImg {
+        display: flex;
+        flex-direction: column;
 
-    /* #btnsCreate {
+        #initialText {
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        #initialImg {
+            width: 40vw;
+            height: auto;
+            border-radius: 7px;
+        }
+    }
+
+    #btnsCreate {
+        width: 70%;
         display: flex;
         justify-content: center;
-    } */
-}
 
-.btns {
-    width: 10rem;
-    height: 3rem;
-    border-radius: 15px;
-    margin: 2px;
-    background-color: #181c14;
-    color: #ECDFCC;
-
-    :hover {
-        
+        #btnAddProduct, #btnAddOrder {
+            width: 80%;
+            margin: 10px;
+        }
     }
 }
 
+.btns {
+    width: 12rem;
+    height: 3.2rem;
+    border-radius: 15px;
+    margin: 5px;
+    background-color: #ac7377;
+    color: #ECDFCC;
 
+}
+
+/* #554866  #664853 #486649 */
 
 
 
@@ -58,12 +78,6 @@ main {
 footer {
     width: 100vw;
     height: 10vh;
-    background-color: #181c14;
+    background-color: #092343;
 }
 
-
-
-/* FORMS */
-#newOrder, #newProduct {
-    display: none;
-}

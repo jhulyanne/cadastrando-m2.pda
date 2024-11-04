@@ -15,11 +15,15 @@
     </header>
     <main>
         <section id="initialDisplay">
-            <h2 id="initialText">O que você quer fazer?</h2>
+            <div id="textAndImg">
+                <h2 id="initialText">O que você quer fazer?</h2>
+                <img id="initialImg" src="assets/imgs/books.jpg" alt="">
+            </div>
             <div id="btnsCreate">
                 <button class="btns" id="btnAddProduct">Adicionar novo produto</button>   
                 <button class="btns" id="btnAddOrder">Adicionar novo pedido</button>         
             </div>
+            <a href="#tables">Visualizar conteúdo já disponível</a>
         </section>
 
         <section id="forms">
@@ -92,7 +96,7 @@
                             <th>Autor</th>
                             <th>Editora</th>
                             <th>Gêneros</th>
-                            <th>Quantidade</th>
+                            <th>Em estoque</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -123,8 +127,8 @@
             </div>
         </section>
 
-        
         <button class="btns">Excluir todos os dados</button>
+        <button id="backToTop"><a href="#top"><img class="imgUp" src="assets/imgs/icons/up-icon.svg" alt=""></a></button>
     </main>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/classes.js"></script>

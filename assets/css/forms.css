@@ -1,4 +1,8 @@
 
+#newOrder, #newProduct {
+    display: none;
+}
+
 #orderForm {
     display: flex;
     flex-direction: column;
@@ -17,9 +21,4 @@
         flex-direction: row;
         }
     }
-}
-
-#btnsCreate {
-    display: flex;
-    flex-direction: row;
 }
