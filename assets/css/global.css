@@ -89,7 +89,7 @@ main {
     display: none;
 }
 
-/* 
+
 #initialDisplay {
     height: 90vh;
     width: 50vw;
@@ -126,7 +126,7 @@ main {
             margin: 10px;
         }
     }
-}*/
+}
 
 #tables {
     width: 85%;

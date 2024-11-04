@@ -1,6 +1,6 @@
-/* #newOrder, #newProduct {
+#newOrder, #newProduct {
     display: none;
-} */
+}
 
 #orderForm, #productForm {
     display: flex;
