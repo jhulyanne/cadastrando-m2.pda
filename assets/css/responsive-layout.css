@@ -1,4 +1,4 @@
-@media all and (max-width: 880px) {
+@media all and (max-width: 850px) {
     #tables {
         font-size: 0.8em;
         
@@ -27,44 +27,21 @@
     }
 
     body {
-        font-family: "Nunito";
-        background-color: #c8baa8;
         overflow-x: hidden;
     }
     
     header {
         height: 100%;
+        font-size: 12px;
     
         #divLogo {
             width: 25vw;
-            padding-left: 8vw;
         }
     
         #logo {
             height: 3rem;
             width: auto;
         }
-    
-        ul {
-            width: 35vw;
-            display: flex;
-            list-style-type: none;
-            gap: 10%;
-    
-            a {
-                color: white;
-                text-decoration: none;
-    
-                &:hover {
-                    color: #a26f72;
-                    font-weight: 700;
-                    text-decoration: underline;
-                }
-    
-                &:visited {
-                    text-decoration: none;
-                }
-            }
         }
     }
     
@@ -206,30 +183,16 @@
         box-shadow: inset 2px 2px 8px #6c99d1, inset -2px -2px 8px #052752;
         font-size: 0.7rem;
     }
-    
-    footer {
-        width: 100vw;
-        height: 15vh;
-        background-color: #092343;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        #deleteAll {
+
+    #deleteAll {
             width: 10rem;
             height: 2.8rem;
-            border-radius: 12px;
-            margin: 5px;
-            background-color: #aa262f;
-            color: #ECDFCC;
-            box-shadow: inset 2px 2px 8px #fa4949, inset -2px -2px 8px #0e0000;
         }
     
         .imgUp {
             height: 2.5rem;
         }
-    }
-}
+
 
 @media all and (max-width: 590px) {
     header {
@@ -239,20 +202,9 @@
             height: 2.5rem;
         }
   
-        a {
-            font-size: 0.6rem;
-        }
 
-        ul {
-            width: 60vw;
-            display: flex;
-            list-style-type: none;
-            gap: 10%;
-        }
-    }
 
     #newOrder, #newProduct {
-        height: 0rem;
         font-size: 12px;
     }
 
@@ -274,14 +226,12 @@
         }
     }
 
-    .btns, #deleteAll {
+    .btns {
         width: 8rem;
         height: 2.5rem;
         font-size: 0.7rem;
     }
 
-    #backToTop {
-        right: 1rem;
-        bottom: 1rem;
+
     }
 }
