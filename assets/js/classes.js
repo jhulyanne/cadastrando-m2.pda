@@ -1,8 +1,9 @@
-let products = [];
+let products = JSON.parse(localStorage.getItem('products')) || [];
+let orders = JSON.parse(localStorage.getItem('orders')) || [];
 
 class Product {
     constructor(title, author, publisher, genres, quantity) {
-        this.productCode = Product.generateCode(); 
+        this.productCode = Product.generateCode();
         this.title = title;
         this.author = author;
         this.publisher = publisher;
@@ -57,15 +58,19 @@ class Product {
 
     static editProduct(index) {
         const product = products[index];
-        
+
+        // Preenche o formulário com os dados do produto
         document.getElementById('bookTitle').value = product.title;
         document.getElementById('bookAuthor').value = product.author;
         document.getElementById('bookPublisher').value = product.publisher;
         document.getElementById('bookGenres').value = product.genres;
         document.getElementById('quantAvailable').value = product.quantity;
 
-        formProduct.style.display = "block";
+        // Mostra o formulário de edição de produtos e oculta o de pedidos
+        document.getElementById('newProduct').style.display = "block";
+        document.getElementById('newOrder').style.display = "none";
 
+        // Define a ação do formulário para atualizar o produto
         document.getElementById('productForm').onsubmit = function(event) {
             event.preventDefault();
 
@@ -81,6 +86,7 @@ class Product {
             Product.displayAll();
             document.getElementById('productForm').reset();
             alert('Produto editado com sucesso!');
+            document.getElementById('productForm').onsubmit = null; // Remove o evento onsubmit para evitar duplicação
         };
     }
 
@@ -89,26 +95,6 @@ class Product {
         Product.updateStorage();
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    products = (JSON.parse(localStorage.getItem('products')) || []).map(data => new Product(data.title, data.author, data.publisher, data.genres, data.quantity));
-    Product.displayAll();
-
-    document.getElementById('productForm').onsubmit = function(event) {
-        event.preventDefault();
-        const newProduct = new Product(
-            document.getElementById('bookTitle').value,
-            document.getElementById('bookAuthor').value,
-            document.getElementById('bookPublisher').value,
-            document.getElementById('bookGenres').value,
-            parseInt(document.getElementById('quantAvailable').value)
-        );
-        newProduct.save();
-        Product.displayAll();
-        document.getElementById('productForm').reset();
-        alert('Produto adicionado com sucesso!');
-    };
-});
 
 class Order {
     constructor(productCode, clientName, clientNumber, clientAddress, paymentMethod, orderStatus) {
@@ -127,21 +113,16 @@ class Order {
 
     save() {
         orders.push(this);
-        this.updateStorage();
+        Order.updateStorage();
     }
 
-    updateStorage() {
+    static updateStorage() {
         localStorage.setItem('orders', JSON.stringify(orders));
     }
 
     update(newData) {
         Object.assign(this, newData);
-        this.updateStorage();
-    }
-
-    static delete(index) {
-        orders.splice(index, 1);
-        orders[0].updateStorage();
+        Order.updateStorage();
     }
 
     static displayAll() {
@@ -159,8 +140,12 @@ class Order {
                 <td data-th="Status">${order.orderStatus}</td>
                 <td data-th="Editar/excluir">
                     <div class="btnsEdDel">
-                        <button class="btnEdit" onclick="Order.editOrder(${index})"><img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="editar"></button>
-                        <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()"><img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="deletar"></button>
+                        <button class="btnEdit" onclick="Order.editOrder(${index})">
+                            <img class="imgBtnEditDel" src="assets/imgs/icons/edit-icon.svg" alt="editar">
+                        </button>
+                        <button class="btnDel" onclick="Order.delete(${index}); Order.displayAll()">
+                            <img class="imgBtnEditDel" src="assets/imgs/icons/delete-icon.svg" alt="deletar">
+                        </button>
                     </div>
                 </td>
             `;
@@ -170,16 +155,19 @@ class Order {
 
     static editOrder(index) {
         const order = orders[index];
+
+        // Preenche o formulário com os dados do pedido
         document.getElementById('buyerName').value = order.clientName;
         document.getElementById('buyerNumber').value = order.clientNumber;
         document.getElementById('buyerAddres').value = order.clientAddress;
         document.getElementById('paymentMethod').value = order.paymentMethod;
         document.getElementById('orderStatus').value = order.orderStatus;
 
-        formOrder.style.display = "block";
-        initialDisplay.style.display = "none"
+        // Mostra o formulário de edição de pedidos e oculta o de produtos
+        document.getElementById('newOrder').style.display = "block";
+        document.getElementById('newProduct').style.display = "none";
 
-
+        // Define a ação do formulário para atualizar o pedido
         document.getElementById('orderForm').onsubmit = function(event) {
             event.preventDefault();
             order.update({
@@ -192,14 +180,43 @@ class Order {
             Order.displayAll();
             document.getElementById('orderForm').reset();
             alert('Pedido editado com sucesso!');
-            inicialDislplay.style.display = "block"
-
+            document.getElementById('orderForm').onsubmit = null; // Remove o evento onsubmit para evitar duplicação
         };
+    }
+
+    static delete(index) {
+        orders.splice(index, 1);
+        Order.updateStorage();
     }
 }
 
-let orders = JSON.parse(localStorage.getItem('orders')) || [];
-orders = orders.map(order => new Order(order.productCode, order.clientName, order.clientNumber, order.clientAddress, order.paymentMethod, order.orderStatus));
+document.addEventListener("DOMContentLoaded", () => {
+    products = products.map(data => new Product(data.title, data.author, data.publisher, data.genres, data.quantity));
+    orders = orders.map(data => new Order(data.productCode, data.clientName, data.clientNumber, data.clientAddress, data.paymentMethod, data.orderStatus));
+
+    Product.displayAll();
+    Order.displayAll();
+
+    document.getElementById('productForm').onsubmit = function(event) {
+        event.preventDefault();
+        const newProduct = new Product(
+            document.getElementById('bookTitle').value,
+            document.getElementById('bookAuthor').value,
+            document.getElementById('bookPublisher').value,
+            document.getElementById('bookGenres').value,
+            parseInt(document.getElementById('quantAvailable').value)
+        );
+        newProduct.save();
+        Product.displayAll();
+        document.getElementById('productForm').reset();
+        alert('Produto adicionado com sucesso!');
+    };
+
+    document.getElementById('orderForm').onsubmit = function(event) {
+        event.preventDefault();
+        handleAddOrder();
+    };
+});
 
 function handleAddOrder() {
     const newOrder = new Order(
@@ -213,15 +230,4 @@ function handleAddOrder() {
     newOrder.save();
     alert('Pedido adicionado com sucesso!');
     Order.displayAll();
-    document.getElementById('orderForm').reset();
-}
-
-window.onload = () => {
-    Product.displayAll();
-    Order.displayAll();
-};
-
-document.getElementById('orderForm').onsubmit = function(event) {
-    event.preventDefault();
-    handleAddOrder();
 }
