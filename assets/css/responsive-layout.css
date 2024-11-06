@@ -1,6 +1,4 @@
-@media all and (max-width: 590px) {
-
-
+@media all and (max-width: 880px) {
     #tables {
         font-size: 0.8em;
         
@@ -28,11 +26,262 @@
         }
     }
 
+    body {
+        font-family: "Nunito";
+        background-color: #c8baa8;
+        overflow-x: hidden;
+    }
+    
+    header {
+        height: 100%;
+    
+        #divLogo {
+            width: 25vw;
+            padding-left: 8vw;
+        }
+    
+        #logo {
+            height: 3rem;
+            width: auto;
+        }
+    
+        ul {
+            width: 35vw;
+            display: flex;
+            list-style-type: none;
+            gap: 10%;
+    
+            a {
+                color: white;
+                text-decoration: none;
+    
+                &:hover {
+                    color: #a26f72;
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+    
+                &:visited {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    main {
+        a {
+            color: #092343;
+            font-size: 0.8rem;
+    
+            &:hover {
+                font-weight: 900;
+            }
+        }
+    
+        #backToTop {
+            
+            width: 3rem;
+            height: 3rem;
+            border: none;
+        }
+
+        .imgUp {
+            bottom: 3rem;
+            right: 5rem;
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    
+    #initialDisplay {
+        height: 90vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        #textAndImg {
+            display: flex;
+            flex-direction: column;
+    
+            #initialText {
+                font-size: 1.2rem;
+                margin: 10px;
+            }
+    
+            #initialImg {
+                width: 60vw;
+                height: auto;
+                border-radius: 7px;
+            }
+        }
+    
+        #btnsCreate {
+            width: 80%;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+    
+            #btnAddProduct, #btnAddOrder {
+                width: 80%;
+                margin: 10px;
+            }
+        }
+    }
+    
+    #forms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        #container {
+            display: none;
+        }
+    
+        #orderForm, #productForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+    
+            .labelInput {
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            label {
+                font-weight: 800;
+            }
+    
+            input, select {
+                border-radius: 8px;
+                width: 100%;
+                height: 2.2em;
+            }
+    
+            input::placeholder {
+                color: #757575;
+                padding-left: 10px;
+            }
+    
+            button {
+                align-self: center;
+            }
+        }
+    
+        #paymentMethod, #orderStatus {
+            width: 100%;
+            height: 2em;
+            display: flex;
+            flex-direction: row;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    
+        #newOrder, #newProduct {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: hidden;
+            border-radius: 10px;
+            gap: 4vh;
+            padding: 8%;
+            background-color: #9198a3;
+            height: 60vh;
+            margin: 3vh;
+        }
+    }
+    
     .btns {
-        font-size: 0.7em;
         width: 10rem;
-        height: 2.5rem;
+        height: 2.8rem;
+        border-radius: 12px;
+        margin: 5px;
+        background-color: #153a67;
+        color: #f7f2eb;
+        box-shadow: inset 2px 2px 8px #6c99d1, inset -2px -2px 8px #052752;
+        font-size: 0.7rem;
+    }
+    
+    footer {
+        width: 100vw;
+        height: 15vh;
+        background-color: #092343;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        #deleteAll {
+            width: 10rem;
+            height: 2.8rem;
+            border-radius: 12px;
+            margin: 5px;
+            background-color: #aa262f;
+            color: #ECDFCC;
+            box-shadow: inset 2px 2px 8px #fa4949, inset -2px -2px 8px #0e0000;
+        }
+    
+        .imgUp {
+            height: 2.5rem;
+        }
+    }
+}
+
+@media all and (max-width: 590px) {
+    header {
+        height: 7vh;
+
+        #logo {
+            height: 2.5rem;
+        }
+  
+        a {
+            font-size: 0.6rem;
+        }
+
+        ul {
+            width: 60vw;
+            display: flex;
+            list-style-type: none;
+            gap: 10%;
+        }
     }
 
-  
+    #newOrder, #newProduct {
+        height: 0rem;
+        font-size: 12px;
+    }
+
+    #initialDisplay {
+        width: 90vw;
+
+        #textAndImg {
+            #initialText {
+                font-size: 1rem;
+            }
+
+            #initialImg {
+                width: 70vw;
+            }
+        }
+
+        #btnsCreate {
+            width: 90%;
+        }
+    }
+
+    .btns, #deleteAll {
+        width: 8rem;
+        height: 2.5rem;
+        font-size: 0.7rem;
+    }
+
+    #backToTop {
+        right: 1rem;
+        bottom: 1rem;
+    }
 }

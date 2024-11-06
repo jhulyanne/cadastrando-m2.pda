@@ -4,7 +4,8 @@ const formOrder = document.getElementById('newOrder');
 const formProduct = document.getElementById('newProduct');
 const btnEdit = document.getElementById('btnDel');
 const initialText = document.getElementById('initialText');
-const textAndImg = document.getElementById('textAndImg')
+const textAndImg = document.getElementById('textAndImg');
+const container = document.getElementById('container');
 let btnClicked = false;
 
 btnNewProduct.addEventListener('click', function(){
@@ -12,6 +13,7 @@ btnNewProduct.addEventListener('click', function(){
 
     if(btnClicked) {
         btnNewProduct.innerText = "Voltar";
+        container.style.display = "block";
         initialText.style.display = "none"
         btnNewOrder.style.display = "none";
         formOrder.style.display = "none";
@@ -34,6 +36,7 @@ btnNewOrder.addEventListener('click', function(){
 
     if(btnClicked) {
         btnNewOrder.innerText = "Voltar";
+        container.style.display = "block";
         btnNewProduct.style.display = "none";
         initialText.style.display = "none";
         formOrder.style.display = "block";
@@ -52,3 +55,13 @@ btnNewOrder.addEventListener('click', function(){
         tables.style.display = "block";
     }
 })
+
+document.getElementById("deleteAll").addEventListener("click", function() {
+    if (confirm("Tem certeza de que deseja excluir todos os dados?")) {
+        localStorage.clear();
+        alert("Dados excluídos com sucesso!");
+        location.reload();
+    } else {
+        alert("Ação cancelada.");
+    }
+});

@@ -5,12 +5,14 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    
 }
 
 body {
     font-family: "Nunito";
     background-color: #c8baa8;
+    overflow-x: hidden;
+
 }
 
 header {
@@ -32,7 +34,7 @@ header {
     }
 
     ul {
-        width: 30vw;
+        width: 60vw;
         display: flex;
         list-style-type: none;
         gap: 10%;
@@ -78,17 +80,12 @@ main {
         bottom: 2rem;
         right: 2rem;
         margin: 5px;
-        background-color: #ac7377;
+        background-color: #153a67;
         color: #ECDFCC;
-        box-shadow: inset 2px 2px 10px #cea9a9, inset -2px -2px 10px #6c0e0e;
+        box-shadow: inset 2px 2px 10px #07274e, inset -2px -2px 10px #153a67;
     }
 
 }
-
-#initialDisplay {
-    display: none;
-}
-
 
 #initialDisplay {
     height: 90vh;
@@ -128,6 +125,72 @@ main {
     }
 }
 
+#forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #container {
+        display: none;
+    }
+    
+    #orderForm, #productForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        
+        .labelInput {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        label {
+            font-weight: 800;
+        }
+    
+        input, select {
+            border-radius: 10px;
+            width: 40%;
+            height: 2em;
+        }
+    
+        input::placeholder {
+            color: #757575;
+            padding-left: 10px;
+        }    
+
+        button {
+            align-self: center;
+        }
+    }
+    
+    #paymentMethod, #orderStatus {
+        width: 50%;
+        height: 2em;
+        display: flex;
+        flex-direction: row;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    #newOrder, #newProduct {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: hidden;
+        border-radius: 10px;
+        gap: 5vh;
+        padding: 10%;
+        background-color: #9198a3;
+        height: 65vh;
+        margin: 3vh;
+    }
+
+}
+
 #tables {
     width: 85%;
     text-align: center;
@@ -148,7 +211,7 @@ main {
         th {
             padding: 0;
             height: 2.8rem;
-            background-color: #030f1c;
+            background-color: #081e36;
             color: #f9f9ee;
             font-weight: 600;
             font-size: 15px;
@@ -186,15 +249,18 @@ main {
     height: 3.2rem;
     border-radius: 15px;
     margin: 5px;
-    background-color: #ac7377;
-    color: #ECDFCC;
-    box-shadow: inset 2px 2px 10px #cea9a9, inset -2px -2px 10px #6c0e0e;
+    background-color: #153a67;
+    color: #f7f2eb;
+    box-shadow: inset 2px 2px 10px #6c99d1, inset -2px -2px 10px #052752;
 }
 
 footer {
     width: 100vw;
     height: 15vh;
     background-color: #092343;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     #deleteAll {
         width: 12rem;
@@ -209,4 +275,13 @@ footer {
     .imgUp {
         height: 3rem;
     }
+}
+
+.btns:hover, #deleteAll:hover, #backToTop:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#backToTop:hover {
+    transform: scale(1.1);
 }
