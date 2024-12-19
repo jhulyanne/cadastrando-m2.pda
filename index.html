@@ -7,155 +7,147 @@
     <title>Controle de inventário</title>
 </head>
 <body>
-    <header>
-        <div id="divLogo">
-            <a href="index.html"><img id="logo" src="assets/imgs/logo.svg" alt=""></a>
-        </div>
-        <ul>
-            <li><a href="#booksAvailable">Produtos registrados</a></li>
-            <li><a href="#ordersList">Pedidos registrados</a></li>
-        </ul>
-    </header>
     <main>
-        <section id="initialDisplay">
-            <div id="textAndImg">
-                <h2 id="initialText">O que você quer fazer?</h2>
-                <img id="initialImg" src="assets/imgs/books.jpg" alt="">
-            </div>
-            <div id="btnsCreate">
-                <button class="btns" id="btnAddProduct">Adicionar novo produto</button>   
-                <button class="btns" id="btnAddOrder">Adicionar novo pedido</button>         
-            </div>
-            <a href="#tables">Visualizar conteúdo já registrado</a>
+        <section id="start">
+            <article id="container-left">
+                <nav>
+                    <ul>
+                        <li><a href=""><img src="" alt="logo"></a></li>
+                        <li><a href="">Produtos registrados</a></li>
+                        <li><a href="">Pedidos registrados</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <button>Novo produto</button>
+                    <button>Novo pedido</button>
+                </div>
+
+                <article id="left-form-product">
+                    <form>
+                        <div class="div-label-input">
+                            <label for="">Em estoque: </label>
+                            <input type="number">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Título: </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Autor: </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Editora: </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Gêneros: </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Preço</label>
+                            <input type="number">
+                        </div>
+                    <button>Concluir</button> 
+                    </form>
+                </article>
+
+
+                <article id="right-form-order">
+                    <form>
+                        <h2>Informações do pedido</h2>
+                        <div class="div-label-input">
+                            <label for="">Produto (ID): </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <input type="checkbox" name="" id="">
+                            <label for="">Embrulhar para presente</label>
+                            <button>Adicionar outro produto</button>
+                            <p>Total do pedido:</p> <!-- adicioanr no js-->
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Método de pagamento:</label>
+                            <select name="" id="">
+                                <option value="">Pix</option>
+                                <option value="">Débito</option>
+                                <option value="">Crédito</option>
+                                <option value="">Boleto</option>
+                            </select>
+                            <label for="">Status do pedido</label>
+                            <select name="" id="">
+                                <option value="">A confirmar pagamento</option>
+                                <option value="">Pago</option>
+                                <option value="">Enviado</option>
+                                <option value="">Finalizado</option>
+                            </select>
+                        </div>
+
+                        <h2>Informações do cliente</h2>                                      
+                        <div class="div-label-input">
+                            <label for="">Nome: </label>
+                            <input type="text">
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Contato: </label>
+                            <input type="text">
+                            <button>Adicionar contato secundário</button>
+                        </div>
+                        <div class="div-label-input">
+                            <label for="">Endereço: </label>
+                            <input type="text">
+                            <button>Adicionar endereço secundário</button>
+                        </div>
+                    <button>Concluir</button> 
+                    </form>
+                </article>
+
+            </article>
+            <article id="container-right">
+                <img src="" alt="">
+            </article>
         </section>
 
-        <section id="forms">
-            <div id="container">
-                <div id="newOrder">
-                    <div class="texts">
-                        <p>Atenção: caso haja mais de um valor para adicionar, separe-os por vírgula.</p>
-                        <p>Exemplo: Email do cliente: ana.112@example.com, jules87@example.com</p>
-                        <p>Consulte a <a href="#booksAvailable">tabela de produtos disponíveis</a> para checar os códigos dos itens da compra.</p>
-                    </div>
-                    <form id="orderForm">
-                        <div class="labelInput">
-                            <label for="orderProducts">Código do produto:</label>
-                            <input type="text" id="orderProducts" placeholder="Digite o código do produtos" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="buyerName">Nome do cliente:</label>
-                            <input type="text" id="buyerName" placeholder="Digite o nome do cliente" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="buyerNumber">Telefone do cliente (apenas números):</label>
-                            <input type="text" id="buyerNumber" placeholder="Digite o telefone do cliente" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="buyerAddres">Endereço do cliente:</label>
-                            <input type="text" id="buyerAddres" placeholder="Digite o endereço do cliente" required>
-                        </div>
-                        <div id="payAndstatus">
-                            <div class="labelInput">
-                                <label for="paymentMethod">Forma de pagamento:</label>
-                                <select id="paymentMethod">
-                                    <option class="payMethods" value="Cartão">Cartão</option>
-                                    <option class="payMethods" value="Boleto">Boleto</option>
-                                    <option class="payMethods" value="Pix">Pix</option>
-                                </select>
-                            </div>
-                        <div class="labelInput">
-                            <label for="orderStatus">Status do pedido:</label>
-                                <select id="orderStatus">
-                                    <option class="orderSt" value="A confirmar pagamento">A confirmar pagamento</option>
-                                    <option class="orderSt" value="Embalando">Embalando</option>
-                                    <option class="orderSt" value="Enviado">Enviado</option>
-                                    <option class="orderSt" value="Concluído">Concluído</option>
-                                </select>
-                        </div>
-                        </div>
-                        <button type="submit" class="btns" id="saveNewOrder">Concluir</button>
-                    </form>
-                </div>
-                <div id="newProduct">
-                    <div class="texts">
-                        <p>Atenção: caso haja mais de um valor para adicionar, separe-os por vírgula.</p>
-                        <p>Exemplo: Gêneros: romance, policial, suspense</p>
-                    </div>
-                    <form id="productForm">
-                        <div class="labelInput">
-                            <label for="bookTitle">Título:</label>
-                            <input type="text" id="bookTitle" placeholder="Digite o título do livro" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="bookAuthor">Autor:</label>
-                            <input type="text" id="bookAuthor" placeholder="Digite o autor do livro" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="bookPublisher">Editora:</label>
-                            <input type="text" id="bookPublisher" placeholder="Digite a editora do livro" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="bookGenres">Gêneros:</label>
-                            <input type="text" id="bookGenres" placeholder="Digite o título do livro" required>
-                        </div>
-                        <div class="labelInput">
-                            <label for="quantAvailable">Quantidade disponível no estoque:</label>
-                            <input type="number" id="quantAvailable" placeholder="Digite a quantidade no estoque" required>
-                        </div>
-                        <button class="btns" id="saveNewProduct">Concluir</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <section id="recorded-data">
+            <!-- o javascript vai gerar os daodos de produtos aqui, assim: -->
 
-        <section id="tables">
-            <div id="booksAvailable">
-                <table id="productTable">
-                    <caption>Produtos Disponíveis</caption>
-                    <thead>
-                        <tr>
-                            <th>Código</th>
-                            <th>Título</th>
-                            <th>Autor</th>
-                            <th>Editora</th>
-                            <th>Gêneros</th>
-                            <th>Em estoque</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- As linhas dos produtos serão adicionadas aqui -->
-                    </tbody>
-                </table>
-            </div>
-            <div id="ordersList">
-                <table id="orderTable">
-                    <caption>Pedidos</caption>
-                    <thead>
-                        <tr>
-                            <th>Código</th>
-                            <th>Produtos</th>
-                            <th>Nome do Cliente</th>
-                            <th>Contato</th>
-                            <th>Endereço</th>
-                            <th>Forma de Pagamento</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         <!-- As linhas dos produtos serão adicionadas aqui -->
-                    </tbody>
-                </table>
-            </div>
+            <article id="products">
+                <!-- <div id="product">
+                    <img src="" alt="">
+                    <div id="details">
+                        <h2>ID livro</h2>
+                        <p>Em estoque:</p>
+                        <p>Título:</p>
+                        <p>Autor:</p>
+                        <p>Editora</p>
+                        <p>Gêneros</p>
+                        <p>Preço</p>
+                        <div id="btns-edit-del">
+                            <button id="btn-edit"><img src="" alt="">editar</button>
+                            <button id="btn-del"><img src="" alt="">excluir</button>
+                        </div>
+                    </div>   -->
+                </div>
+            </article>
+
+
+            <article id="orders">
+                <!-- <div id="order">
+                    <div id="top-line">
+                        <h2>ID pedido</h2>
+                        <div>
+                            <p>data pedido</p>
+                            <p>nome cliente</p>
+                        </div>
+                    </div>
+                    <div id="bottom-line">
+                        <p>total do pedido</p>
+                        <p>método de pagamento</p>
+                        <p>status pagamento</p>
+                    </div> -->
+                </div>
+            </article>
         </section>
-        <button id="backToTop"><a href="#top"><img class="imgUp" src="assets/imgs/icons/up-icon.svg" alt=""></a></button>   
     </main>
-    
-    <footer>
-        <button id="deleteAll">Excluir todos os dados</button>
-    </footer>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/classes.js"></script>
 </body>
 </html>
