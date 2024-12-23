@@ -1,12 +1,6 @@
-<h1 align = "center">Mini projeto individual - [M2] - Cadastrando
+### Este é o mini projeto do módulo 2 proposto pelo curso Desenvolvedor Web Full-Stack do [Programadores do Amanhã](https://programadoresdoamanha.org/) que está sendo reconstruído, tendo como motivação os feedbacks recebidos junto à nota.
 
-### Este é um projeto do módulo 2 proposto pelo curso Desenvolvedor Full-Stack do [Programadores do Amanhã](https://programadoresdoamanha.org/)
-
-<div align = "center">
-    <img src="assets/imgs/logo_PdA.png" height = "100px" width = "auto">
-</div>
-
-### Este projeto é um controle de inventário e pedidos de uma livraria online. A ideia veio de um projeto realizado entre abril e junho de 2023 com alguns colaboradores. [Link para o projeto](https://github.com/jhulyanne/livraria-do-tempo).
+#### Este projeto é um controle de inventário e pedidos de uma livraria online. A ideia veio de um outro projeto, a [Livraria do Tempo](https://github.com/jhulyanne/livraria-do-tempo), realizado entre abril e junho de 2024 com alguns colaboradores.
 
 A ideia é ter um controle de produtos e pedidos, utilizando as operações CRUD para garantir interatividade com o usuário, manutenção de dados e maior flexibilidade para gerenciar os produtos e pedidos.
 
