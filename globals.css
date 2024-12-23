@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary-color: #e6cfc5; 
+    --secondary-color:#BB8E78;
+    --tertiary-color: #795647;
+    
+    --highlight-color: #485d45;
+
+    --neutral-color: #e7e2dd; 
+
+    --background-color: #ece2d7;
+    --background-secondary: #F7F7F7;
+    
+    --text-primary: #000000; 
+    --text-on-dark: #f1e5e5;
+    --highlighted-text: #9f8553;
+
+    --standard-radius: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    overflow-x: hidden;    
+}

@@ -1,0 +1,87 @@
+@import url(../../globals.css);
+
+body {
+    font-family: 'Nunito';
+    background-color: var(--background-color);
+}
+
+#navigation {
+    height: 10vh;
+
+    ul {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5%;
+    }
+
+    a {
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: 500;
+        color: var(--tertiary-color);
+        font-weight: bold;
+    }
+
+    #logo {
+        width: 60%;
+        height: auto;
+    }
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0% 2% 0%;
+}
+
+#start-container { 
+    overflow: hidden;
+    background-color: var(--primary-color);
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--standard-radius);
+}
+
+#container-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2%;
+}
+ 
+.btns-start {
+    margin: 5px;
+    width: 15rem;
+    height: 3rem;
+    border: none;
+    font-weight: bold;
+    border-radius: var(--standard-radius);
+    background-color: var(--secondary-color);
+    color: var(--text-on-dark);
+}
+
+#container-right {
+    width: 50%;
+}
+
+#start-img {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--standard-radius);
+}
