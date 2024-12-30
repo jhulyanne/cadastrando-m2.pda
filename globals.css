@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #e6cfc5; 
-    --secondary-color:#BB8E78;
+    --secondary-color:#bb8e78;
     --tertiary-color: #795647;
     
     --highlight-color: #485d45;
@@ -15,6 +15,9 @@
     --text-primary: #000000; 
     --text-on-dark: #f1e5e5;
     --highlighted-text: #9f8553;
+
+    --success-color: #6c8f6a;
+    --error-color: #b55a54;
 
     --standard-radius: 30px;
 }

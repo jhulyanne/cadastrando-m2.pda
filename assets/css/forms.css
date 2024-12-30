@@ -1,3 +1,92 @@
-#form-product, #form-order{
+@import url(../../globals.css);
+
+#forms {
+    /* display: none; */
+
+}
+
+#form-order {
     display: none;
 }
+
+#forms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* adicionar #form-product, #form-order depois */
+#form-product {
+    background-color: var(--primary-color);
+    border-radius: var(--standard-radius);
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 70%;
+    }
+
+    .div-label-input {
+        padding: 2.5%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input {
+        padding: 0 20px;
+        width: 50%;
+        height: 5vh;
+        border-radius: var(--standard-radius);
+        border: none;
+    }
+
+
+}
+
+.btns-form {
+    display: flex;
+
+    .submit-form {
+        background-color: var(--success-color);
+
+        &:hover {
+            background-color: #4c634a;
+            transform: translateY(-2px);
+        }
+    }
+
+    .cancel-form {
+        background-color: var(--error-color);
+
+        &:hover {
+            background-color: #85413c;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.submit-form, .cancel-form {
+    border: none;
+    margin: 5px;
+    width: 20rem;
+    height: 3rem;
+    font-weight: bold;
+    border-radius: var(--standard-radius);
+    color: var(--text-on-dark);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+/*  */
+

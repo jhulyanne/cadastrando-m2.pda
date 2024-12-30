@@ -7,49 +7,67 @@ body {
 
 #navigation {
     position: fixed;
-    height: 15vh;
-    padding: 1%;
+    padding: 0.5%;
+    height: 10vh;
     width: 100vw;
 
     ul {
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        gap: 5%;
+        gap: 10%;
+
+        li {
+            padding: 0px 10px;
+        }
     }
 
     a {
+        display: inline-block; /* Importante para aplicar transformações */
+        text-decoration: none; /* Opcional: remove sublinhado do link */
+        transition: transform 0.3s ease; /* Adiciona suavidade ao efeito */
+        color: var(--tertiary-color); /* Cor inicial */
+        width: 100%;
+    }
+    
+    a:hover {
+        transform: scale(1.05);
+        color: var(--highlight-color);
+        font-weight: bold;
+    }
+    
+    /* a {
         font-size: 1.1rem;
         text-decoration: none;
         font-weight: 500;
-        color: var(--tertiary-color);
+        color: ;
         transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;
 
         &:hover {
-            color: var(--highlight-color);
+            color: ;
             font-weight: bold;
         }
-    }
+    } */
 }
 
- #logo {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s;
-        padding: 10%;
+#logo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+    padding: 10%;
 
-        &:hover {
-            transform: scale(1.05);
-        }
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 #start {
     height: 100vh;
-    display: flex;
+    padding: 10vh;
+    display: none;
     justify-content: center;
     align-items: center;
     /* padding: 1% 0% 2% 0%; */
