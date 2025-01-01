@@ -5,7 +5,7 @@
 
 }
 
-#form-order {
+#form-product {
     display: none;
 }
 
@@ -17,7 +17,7 @@
 }
 
 /* adicionar #form-product, #form-order depois */
-#form-product {
+/* #form-order {
     background-color: var(--primary-color);
     border-radius: var(--standard-radius);
     width: 40vw;
@@ -39,6 +39,56 @@
         justify-content: space-between;
     }
 
+    label {
+        font-weight: bold;
+    }
+
+
+    input {
+        padding: 0 20px;
+        width: 50%;
+        height: 5vh;
+        border-radius: var(--standard-radius);
+        border: none;
+    }
+} */
+
+#form-order {
+    background-color: var(--primary-color);
+    border-radius: var(--standard-radius);
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .div-label-input {
+        padding: 1.5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .select-inputs {
+        width: 35%;
+        height: 5vh;
+        border-radius: var(--standard-radius);
+    }
+
+    #check-box {
+        width: 8%;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
     input {
         padding: 0 20px;
         width: 50%;
@@ -47,8 +97,16 @@
         border: none;
     }
 
+    .btn-add-more {
+        border: none;
+        border-radius: var(--standard-radius);
+    }
 
 }
+
+
+
+
 
 .btns-form {
     display: flex;

@@ -36,27 +36,27 @@
                 <article id="form-product">
                     <form>
                         <div class="div-label-input">
-                            <label for="">Em estoque: </label>
+                            <label for="">Em estoque:</label>
                             <input type="number">
                         </div>
                         <div class="div-label-input">
-                            <label for="">Título: </label>
+                            <label for="">Título:</label>
                             <input type="text">
                         </div>
                         <div class="div-label-input">
-                            <label for="">Autor: </label>
+                            <label for="">Autor:</label>
                             <input type="text">
                         </div>
                         <div class="div-label-input">
-                            <label for="">Editora: </label>
+                            <label for="">Editora:</label>
                             <input type="text">
                         </div>
                         <div class="div-label-input">
-                            <label for="">Gêneros: </label>
+                            <label for="">Gêneros:</label>
                             <input type="text">
                         </div>
                         <div class="div-label-input">
-                            <label for="">Preço</label>
+                            <label for="">Preço:</label>
                             <input type="number">
                         </div>
                     <div class="btns-form">
@@ -70,24 +70,24 @@
                         <h2>Informações do pedido</h2>
                         <div class="div-label-input">
                             <label for="">Produto (ID): </label>
-                            <input type="text">
+                            <input class="" type="text">
                         </div>
                         <div class="div-label-input">
-                            <input type="checkbox" name="" id="">
+                            <input id="check-box" type="checkbox" name="" id="">
                             <label for="">Embrulhar para presente</label>
-                            <button>Adicionar outro produto</button>
+                            <button class="btn-add-more">Adicionar outro produto</button>
                             <p>Total do pedido:</p> <!-- adicioanr no js-->
                         </div>
                         <div class="div-label-input">
                             <label for="">Método de pagamento:</label>
-                            <select name="" id="">
+                            <select name="" class="select-inputs">
                                 <option value="">Pix</option>
                                 <option value="">Débito</option>
                                 <option value="">Crédito</option>
                                 <option value="">Boleto</option>
                             </select>
                             <label for="">Status do pedido</label>
-                            <select name="" id="">
+                            <select name="" class="select-inputs">
                                 <option value="">A confirmar pagamento</option>
                                 <option value="">Pago</option>
                                 <option value="">Enviado</option>
@@ -102,14 +102,17 @@
                         <div class="div-label-input">
                             <label for="">Contato: </label>
                             <input type="text">
-                            <button>Adicionar contato secundário</button>
+                            <button class="btn-add-more">Adicionar contato secundário</button>
                         </div>
                         <div class="div-label-input">
                             <label for="">Endereço: </label>
                             <input type="text">
-                            <button>Adicionar endereço secundário</button>
+                            <button class="btn-add-more">Adicionar endereço secundário</button>
                         </div>
-                    <button class="submit-form">Concluir</button>
+                        <div class="btns-form">
+                            <button class="submit-form">Concluir</button>
+                            <button class="cancel-form">Cancelar</button>  
+                        </div>
                     </form>
                 </article>
             </div>
